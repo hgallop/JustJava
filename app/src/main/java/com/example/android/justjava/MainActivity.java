@@ -51,9 +51,8 @@ public class MainActivity extends AppCompatActivity {
      * This method is called when the order button is clicked.
      */
     public void submitOrder(View view) {
-        int total = calculatePrice(quantity, 5);
+        int total = calculatePrice();
         String priceMessage = "Total: $" + total + "\nThank You!";
-
         displayMessage(priceMessage);
     }
 
@@ -75,13 +74,9 @@ public class MainActivity extends AppCompatActivity {
 
     /**
      * Calculates the price of the order.
-     *
-     * @param quantity is the number of cups of coffee ordered
-     * @param price is the price for each cup of coffee
      */
-    private int calculatePrice(int quantity, int price) {
-        price = quantity * price;
-        return price;
+    private int calculatePrice() {
+        return quantity * 5;
     }
     /**
      * This method displays the given text on the screen.
