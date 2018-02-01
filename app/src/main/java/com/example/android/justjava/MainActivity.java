@@ -77,6 +77,7 @@ public class MainActivity extends AppCompatActivity {
      * Calculates the price of the order.
      *
      * @param quantity is the number of cups of coffee ordered
+     * @param price is the price for each cup of coffee
      */
     private int calculatePrice(int quantity, int price) {
         price = quantity * price;
