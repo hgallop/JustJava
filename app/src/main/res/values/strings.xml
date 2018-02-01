@@ -5,7 +5,7 @@
     <string name="add">+</string>
     <string name="quan_display">0</string>
     <string name="sub">-</string>
-    <string name="price">Price</string>
+    <string name="price">Order Summary</string>
     <string name="price_display">$0</string>
     <string name="order">Order</string>
 </resources>

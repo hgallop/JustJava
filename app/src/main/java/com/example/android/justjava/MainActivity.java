@@ -5,7 +5,6 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.TextView;
-import java.text.NumberFormat;
 
 /**
  * This app displays an order form to order coffee.
@@ -16,7 +15,7 @@ public class MainActivity extends AppCompatActivity {
     int quantity = 0;
 
     private TextView textQuantity;
-    private TextView textPrice;
+    private TextView textSummary;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,7 +23,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         textQuantity = (TextView) findViewById(R.id.quantity_text_view);
-        textPrice = (TextView) findViewById(R.id.price_text_view);
+        textSummary = (TextView) findViewById(R.id.order_summary_text_view);
     }
 
     /**
@@ -51,8 +50,7 @@ public class MainActivity extends AppCompatActivity {
      * This method is called when the order button is clicked.
      */
     public void submitOrder(View view) {
-        int price = calculatePrice();
-        String summaryMessage = createOrderSummary(price);
+        String summaryMessage = createOrderSummary(calculatePrice());
         displayMessage(summaryMessage);
     }
 
@@ -62,14 +60,6 @@ public class MainActivity extends AppCompatActivity {
     private void displayQuantity(int numberOfCoffees) {
         TextView quantityTextView = textQuantity;
         quantityTextView.setText("" + numberOfCoffees);
-    }
-
-    /**
-     * This method displays the given price on the screen.
-     */
-    private void displayPrice(int number) {
-        TextView priceTextView = textPrice;
-        priceTextView.setText(NumberFormat.getCurrencyInstance().format(number));
     }
 
     /**
@@ -84,19 +74,19 @@ public class MainActivity extends AppCompatActivity {
     /**
      * Creates an order summary message
      *
+     * @param total to pay
      * @return message created
      */
     private String createOrderSummary(int total) {
-        String message = "Name: Heather \nQuantity: " + quantity + "\nTotal: $" + total + "\nThank You!";
-        return message;
+        return "Name: Heather \nQuantity: " + quantity + "\nTotal: $" + total + "\nThank You!";
     }
 
     /**
      * This method displays the given text on the screen.
      */
     private void displayMessage(String message) {
-        TextView priceTextView = textPrice;
-        priceTextView.setText(message);
+        TextView orderSummaryTextView = textSummary;
+        orderSummaryTextView.setText(message);
     }
 
 }
