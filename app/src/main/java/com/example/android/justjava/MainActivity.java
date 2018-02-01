@@ -15,18 +15,24 @@ public class MainActivity extends AppCompatActivity {
     /** This variable is the global quantity used in all onClick methods */
     int quantity = 0;
 
+    private TextView textQuantity;
+    private TextView textPrice;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        textQuantity = (TextView) findViewById(R.id.quantity_text_view);
+        textPrice = (TextView) findViewById(R.id.price_text_view);
     }
 
     /**
      * This method is called when the + button is clicked.
      */
     public void increment(View view) {
-        quantity = quantity + 1;
-        display(quantity);
+        quantity += 1;
+        displayQuantity(quantity);
     }
 
     /**
@@ -34,11 +40,11 @@ public class MainActivity extends AppCompatActivity {
      */
     public void decrement(View view) {
         if (quantity > 0) {
-            quantity = quantity - 1;
+            quantity -= 1;
         } else {
             quantity = 0;
         }
-        display(quantity);
+        displayQuantity(quantity);
     }
 
     /**
@@ -55,8 +61,8 @@ public class MainActivity extends AppCompatActivity {
     /**
      * This method displays the given quantity value on the screen.
      */
-    private void display(int number) {
-        TextView quantityTextView = (TextView) findViewById(R.id.quantity_text_view);
+    private void displayQuantity(int number) {
+        TextView quantityTextView = textQuantity;
         quantityTextView.setText("" + number);
     }
 
@@ -64,7 +70,7 @@ public class MainActivity extends AppCompatActivity {
      * This method displays the given price on the screen.
      */
     private void displayPrice(int number) {
-        TextView priceTextView = (TextView) findViewById(R.id.price_text_view);
+        TextView priceTextView = textPrice;
         priceTextView.setText(NumberFormat.getCurrencyInstance().format(number));
     }
 
@@ -72,7 +78,7 @@ public class MainActivity extends AppCompatActivity {
      * This method displays the given text on the screen.
      */
     private void displayMessage(String message) {
-        TextView priceTextView = (TextView) findViewById(R.id.price_text_view);
+        TextView priceTextView = textPrice;
         priceTextView.setText(message);
     }
 
