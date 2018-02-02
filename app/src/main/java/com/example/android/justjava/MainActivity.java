@@ -4,6 +4,7 @@ package com.example.android.justjava;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.widget.CheckBox;
 import android.widget.TextView;
 
 /**
@@ -13,9 +14,11 @@ public class MainActivity extends AppCompatActivity {
 
     /** This variable is the global quantity used in all onClick methods */
     int quantity = 0;
+    boolean isWhipChecked;
 
     private TextView textQuantity;
     private TextView textSummary;
+    private CheckBox checkWhip;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,6 +27,7 @@ public class MainActivity extends AppCompatActivity {
 
         textQuantity = findViewById(R.id.quantity_text_view);
         textSummary = findViewById(R.id.order_summary_text_view);
+        checkWhip = findViewById(R.id.whip_check_box);
     }
 
     /**
@@ -51,6 +55,16 @@ public class MainActivity extends AppCompatActivity {
     /**
      * This method is called when the order button is clicked.
      */
+
+    public void whipCheck(View view) {
+        isWhipChecked = checkWhip.isChecked();
+        if (isWhipChecked) {
+            isWhipChecked = true;
+        }    else {
+            isWhipChecked = false;
+        }
+    }
+
     public void submitOrder(View view) {
         String summaryMessage = createOrderSummary(calculatePrice());
         displayMessage(summaryMessage);
@@ -80,7 +94,7 @@ public class MainActivity extends AppCompatActivity {
      * @return message created
      */
     private String createOrderSummary(int total) {
-        return "Name: Heather \nQuantity: " + quantity + "\nTotal: $" + total + "\nThank You!";
+        return "Name: Heather \nAdd whipped cream? " + isWhipChecked + "\nQuantity: " + quantity + "\nTotal: $" + total + "\nThank You!";
     }
 
     /**
