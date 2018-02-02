@@ -23,6 +23,21 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:padding="@dimen/pad"
+            android:text="@string/topping"
+            android:textAllCaps="true"
+            android:textSize="@dimen/text"
+            android:textColor="@color/chocolate"/>
+
+        <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="@dimen/check"
+            android:text="@string/whip_top"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/pad"
             android:text="@string/quan"
             android:textAllCaps="true"
             android:textColor="@color/chocolate"

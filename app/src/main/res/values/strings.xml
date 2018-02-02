@@ -8,4 +8,6 @@
     <string name="price">Order Summary</string>
     <string name="price_display">$0</string>
     <string name="order">Order</string>
+    <string name="topping">Toppings</string>
+    <string name="whip_top">Whipped Cream</string>
 </resources>

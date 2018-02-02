@@ -3,4 +3,5 @@
     <dimen name="pad">8dp</dimen>
     <dimen name="text">16sp</dimen>
     <dimen name="but_size">48dp</dimen>
+    <dimen name="check">24dp</dimen>
 </resources>

@@ -22,8 +22,8 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        textQuantity = (TextView) findViewById(R.id.quantity_text_view);
-        textSummary = (TextView) findViewById(R.id.order_summary_text_view);
+        textQuantity = findViewById(R.id.quantity_text_view);
+        textSummary = findViewById(R.id.order_summary_text_view);
     }
 
     /**
