@@ -33,7 +33,6 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:paddingLeft="@dimen/check"
-            android:onClick="whipCheck"
             android:text="@string/whip_top"/>
 
         <TextView

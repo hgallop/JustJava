@@ -14,7 +14,6 @@ public class MainActivity extends AppCompatActivity {
 
     /** This variable is the global quantity used in all onClick methods */
     int quantity = 0;
-    boolean isWhipChecked;
 
     private TextView textQuantity;
     private TextView textSummary;
@@ -56,17 +55,9 @@ public class MainActivity extends AppCompatActivity {
      * This method is called when the order button is clicked.
      */
 
-    public void whipCheck(View view) {
-        isWhipChecked = checkWhip.isChecked();
-        if (isWhipChecked) {
-            isWhipChecked = true;
-        }    else {
-            isWhipChecked = false;
-        }
-    }
-
     public void submitOrder(View view) {
-        String summaryMessage = createOrderSummary(calculatePrice());
+        boolean isWhipChecked = checkWhip.isChecked();
+        String summaryMessage = createOrderSummary(calculatePrice(), isWhipChecked);
         displayMessage(summaryMessage);
     }
 
@@ -93,8 +84,8 @@ public class MainActivity extends AppCompatActivity {
      * @param total to pay
      * @return message created
      */
-    private String createOrderSummary(int total) {
-        return "Name: Heather \nAdd whipped cream? " + isWhipChecked + "\nQuantity: " + quantity + "\nTotal: $" + total + "\nThank You!";
+    private String createOrderSummary(int total, boolean hasWhippedCream) {
+        return "Name: Heather \nAdd whipped cream? " + hasWhippedCream + "\nQuantity: " + quantity + "\nTotal: $" + total + "\nThank You!";
     }
 
     /**
