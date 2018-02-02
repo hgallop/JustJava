@@ -30,7 +30,9 @@ public class MainActivity extends AppCompatActivity {
      * This method is called when the + button is clicked.
      */
     public void increment(View view) {
-        quantity += 1;
+        if (quantity < 1000) {
+            quantity += 1;
+        }
         displayQuantity(quantity);
     }
 
