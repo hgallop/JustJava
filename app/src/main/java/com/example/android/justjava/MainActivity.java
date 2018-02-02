@@ -18,6 +18,7 @@ public class MainActivity extends AppCompatActivity {
     private TextView textQuantity;
     private TextView textSummary;
     private CheckBox checkWhip;
+    private CheckBox checkChoc;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,6 +28,7 @@ public class MainActivity extends AppCompatActivity {
         textQuantity = findViewById(R.id.quantity_text_view);
         textSummary = findViewById(R.id.order_summary_text_view);
         checkWhip = findViewById(R.id.whip_check_box);
+        checkChoc = findViewById(R.id.choc_check_box);
     }
 
     /**
@@ -57,7 +59,8 @@ public class MainActivity extends AppCompatActivity {
 
     public void submitOrder(View view) {
         boolean isWhipChecked = checkWhip.isChecked();
-        String summaryMessage = createOrderSummary(calculatePrice(), isWhipChecked);
+        boolean isChocChecked = checkChoc.isChecked();
+        String summaryMessage = createOrderSummary(calculatePrice(), isWhipChecked, isChocChecked);
         displayMessage(summaryMessage);
     }
 
@@ -84,8 +87,11 @@ public class MainActivity extends AppCompatActivity {
      * @param total to pay
      * @return message created
      */
-    private String createOrderSummary(int total, boolean hasWhippedCream) {
-        return "Name: Heather \nAdd whipped cream? " + hasWhippedCream + "\nQuantity: " + quantity + "\nTotal: $" + total + "\nThank You!";
+    private String createOrderSummary(int total, boolean hasWhippedCream, boolean hasChocolate) {
+        String summaryMessage = "Name: Heather \nAdd whipped cream? ";
+        summaryMessage = summaryMessage +  hasWhippedCream + "\nAdd chocolate? " + hasChocolate;
+        summaryMessage = summaryMessage + "\nQuantity: " + quantity + "\nTotal: $" + total + "\nThank You!";
+        return  summaryMessage;
     }
 
     /**
