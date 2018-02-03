@@ -63,9 +63,11 @@ public class MainActivity extends AppCompatActivity {
      */
 
     public void submitOrder(View view) {
+        // Checks for user input
         boolean isWhipChecked = checkWhip.isChecked();
         boolean isChocChecked = checkChoc.isChecked();
         String name = nameText.getText().toString();
+        // Calls order summary method to create message
         String summaryMessage = createOrderSummary(calculatePrice(), isWhipChecked, isChocChecked, name);
         displayMessage(summaryMessage);
     }
@@ -94,12 +96,14 @@ public class MainActivity extends AppCompatActivity {
      * @param hasWhippedCream checked
      * @param hasChocolate    checked
      * @param typedName       from text input
-     * @return message created
+     * @return summaryMessage created
      */
     private String createOrderSummary(int total, boolean hasWhippedCream, boolean hasChocolate, String typedName) {
-        String summaryMessage = "Name: " + typedName + "\nAdd whipped cream? ";
-        summaryMessage = summaryMessage + hasWhippedCream + "\nAdd chocolate? " + hasChocolate;
-        summaryMessage = summaryMessage + "\nQuantity: " + quantity + "\nTotal: $" + total + "\nThank You!";
+        String summaryMessage = "Name: " + typedName;
+        summaryMessage += "\nAdd whipped cream? " + hasWhippedCream;
+        summaryMessage += "\nAdd chocolate? " + hasChocolate;
+        summaryMessage += "\nQuantity: " + quantity;
+        summaryMessage += "\nTotal: $" + total + "\nThank You!";
         return summaryMessage;
     }
 
