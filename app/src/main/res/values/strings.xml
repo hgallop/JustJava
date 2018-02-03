@@ -1,4 +1,4 @@
-<resources>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="app_name">Just Java</string>
     <string name="image">Coffee cup and coffee beans</string>
     <string name="quan">Quantity</string>
@@ -11,7 +11,7 @@
     <string name="choc_top">Chocolte</string>
     <string name="input">Name</string>
     <string name="none"></string>
-    <string name="summ_name">Name: </string>
+    <string name="summ_name">Name: <xliff:g id="name_input" example="Lin">%s</xliff:g></string>
     <string name="summ_whip">Add whipped cream? </string>
     <string name="summ_choc">Add chocolate? </string>
     <string name="summ_quan">Quantity: </string>
