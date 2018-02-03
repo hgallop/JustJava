@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.CheckBox;
+import android.widget.EditText;
 import android.widget.TextView;
 
 /**
@@ -12,13 +13,16 @@ import android.widget.TextView;
  */
 public class MainActivity extends AppCompatActivity {
 
-    /** This variable is the global quantity used in all onClick methods */
+    /**
+     * This variable is the global quantity used in all onClick methods
+     */
     int quantity = 0;
 
     private TextView textQuantity;
     private TextView textSummary;
     private CheckBox checkWhip;
     private CheckBox checkChoc;
+    private EditText nameText;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,6 +33,7 @@ public class MainActivity extends AppCompatActivity {
         textSummary = findViewById(R.id.order_summary_text_view);
         checkWhip = findViewById(R.id.whip_check_box);
         checkChoc = findViewById(R.id.choc_check_box);
+        nameText = findViewById(R.id.name_input);
     }
 
     /**
@@ -60,7 +65,8 @@ public class MainActivity extends AppCompatActivity {
     public void submitOrder(View view) {
         boolean isWhipChecked = checkWhip.isChecked();
         boolean isChocChecked = checkChoc.isChecked();
-        String summaryMessage = createOrderSummary(calculatePrice(), isWhipChecked, isChocChecked);
+        String name = nameText.getText().toString();
+        String summaryMessage = createOrderSummary(calculatePrice(), isWhipChecked, isChocChecked, name);
         displayMessage(summaryMessage);
     }
 
@@ -84,14 +90,17 @@ public class MainActivity extends AppCompatActivity {
     /**
      * Creates an order summary message
      *
-     * @param total to pay
+     * @param total           to pay
+     * @param hasWhippedCream checked
+     * @param hasChocolate    checked
+     * @param typedName       from text input
      * @return message created
      */
-    private String createOrderSummary(int total, boolean hasWhippedCream, boolean hasChocolate) {
-        String summaryMessage = "Name: Heather \nAdd whipped cream? ";
-        summaryMessage = summaryMessage +  hasWhippedCream + "\nAdd chocolate? " + hasChocolate;
+    private String createOrderSummary(int total, boolean hasWhippedCream, boolean hasChocolate, String typedName) {
+        String summaryMessage = "Name: " + typedName + "\nAdd whipped cream? ";
+        summaryMessage = summaryMessage + hasWhippedCream + "\nAdd chocolate? " + hasChocolate;
         summaryMessage = summaryMessage + "\nQuantity: " + quantity + "\nTotal: $" + total + "\nThank You!";
-        return  summaryMessage;
+        return summaryMessage;
     }
 
     /**
