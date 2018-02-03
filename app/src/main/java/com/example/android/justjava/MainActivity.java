@@ -124,11 +124,17 @@ public class MainActivity extends AppCompatActivity {
      * @return summaryMessage created
      */
     private String createOrderSummary(int total, boolean hasWhippedCream, boolean hasChocolate, String typedName) {
-        String summaryMessage = "Name: " + typedName;
-        summaryMessage += "\nAdd whipped cream? " + hasWhippedCream;
-        summaryMessage += "\nAdd chocolate? " + hasChocolate;
-        summaryMessage += "\nQuantity: " + quantity;
-        summaryMessage += "\nTotal: $" + total + "\nThank You!";
+        String name = getResources().getString(R.string.summ_name);
+        String whip = getResources().getString(R.string.summ_whip);
+        String choc = getResources().getString(R.string.summ_choc);
+        String quan = getResources().getString(R.string.summ_quan);
+        String tot = getResources().getString(R.string.summ_total);
+        String thanks = getResources().getString(R.string.summ_thanks);
+        String summaryMessage = name + " " + typedName;
+        summaryMessage += "\n" + whip + " " + hasWhippedCream;
+        summaryMessage += "\n" + choc + " " + hasChocolate;
+        summaryMessage += "\n" + quan + " " + quantity;
+        summaryMessage += "\n" + tot + total + "\n" + thanks;
         return summaryMessage;
     }
 

@@ -11,4 +11,10 @@
     <string name="choc_top">Chocolte</string>
     <string name="input">Name</string>
     <string name="none"></string>
+    <string name="summ_name">Name: </string>
+    <string name="summ_whip">Add whipped cream? </string>
+    <string name="summ_choc">Add chocolate? </string>
+    <string name="summ_quan">Quantity: </string>
+    <string name="summ_total">Total: $</string>
+    <string name="summ_thanks">Thank You!</string>
 </resources>
