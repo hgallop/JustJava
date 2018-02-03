@@ -91,7 +91,9 @@ public class MainActivity extends AppCompatActivity {
      */
     private void displayQuantity(int numberOfCoffees) {
         TextView quantityTextView = textQuantity;
-        quantityTextView.setText("" + numberOfCoffees);
+        String empty = getResources().getString(R.string.none);
+        empty += numberOfCoffees;
+        quantityTextView.setText(empty);
     }
 
     /**
