@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="app_name">Sólo Java</string>
+    <string name="input">Nombre</string>
+    <string name="summ_name">Nombre: <xliff:g id="name_input" example="Lin">%s</xliff:g></string>
+    <string name="topping">Ingredientes</string>
+    <string name="whip_top">Crema batida</string>
+    <string name="choc_top">Chocolate</string>
+    <string name="quan">Cantidad</string>
+    <string name="summ_quan">Cantidad: <xliff:g id="quantity" example="2">%d</xliff:g></string>
+    <string name="summ_whip">Agregue la crema batida? <xliff:g id="hasWhippedCream" example="true">%b</xliff:g></string>
+    <string name="summ_choc">Agregue el chocolate? <xliff:g id="hasChocolate" example="true">%b</xliff:g></string>
+    <string name="summ_total">Total: <xliff:g id="price" example="$10">%s</xliff:g></string>
+    <string name="summ_thanks">Gracias!</string>
+    <string name="image">Taza de café y granos de café</string>
+</resources>

@@ -2,18 +2,18 @@
     <string name="app_name">Just Java</string>
     <string name="image">Coffee cup and coffee beans</string>
     <string name="quan">Quantity</string>
-    <string name="add">+</string>
-    <string name="quan_display">0</string>
-    <string name="sub">-</string>
+    <string name="add" translatable="false">+</string>
+    <string name="quan_display" translatable="false">0</string>
+    <string name="sub" translatable="false">-</string>
     <string name="order">Order</string>
     <string name="topping">Toppings</string>
     <string name="whip_top">Whipped Cream</string>
-    <string name="choc_top">Chocolte</string>
+    <string name="choc_top">Chocolate</string>
     <string name="input">Name</string>
-    <string name="none"></string>
+    <string name="none" translatable="false"></string>
     <string name="summ_name">Name: <xliff:g id="name_input" example="Lin">%s</xliff:g></string>
-    <string name="summ_whip">Add whipped cream? </string>
-    <string name="summ_choc">Add chocolate? </string>
+    <string name="summ_whip">Add whipped cream? <xliff:g id="hasWhippedCream" example="true">%b</xliff:g></string>
+    <string name="summ_choc">Add chocolate? <xliff:g id="hasChocolate" example="true">%b</xliff:g></string>
     <string name="summ_quan">Quantity: </string>
     <string name="summ_total">Total: $</string>
     <string name="summ_thanks">Thank You!</string>
