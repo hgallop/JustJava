@@ -92,27 +92,11 @@
 
         </LinearLayout>
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:padding="@dimen/pad"
-            android:text="@string/price"
-            android:textAllCaps="true"
-            android:textColor="@color/chocolate"
-            android:textSize="@dimen/text" />
-
-        <TextView
-            android:id="@+id/order_summary_text_view"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:padding="@dimen/pad"
-            android:text="@string/price_display"
-            android:textColor="@color/black"
-            android:textSize="@dimen/text" />
 
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/pad2"
             android:layout_margin="@dimen/pad"
             android:background="@color/buttonAlmond"
             android:onClick="submitOrder"

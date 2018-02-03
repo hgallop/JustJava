@@ -1,6 +1,8 @@
 package com.example.android.justjava;
 
 
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -20,7 +22,6 @@ public class MainActivity extends AppCompatActivity {
     int quantity = 0;
 
     private TextView textQuantity;
-    private TextView textSummary;
     private CheckBox checkWhip;
     private CheckBox checkChoc;
     private EditText nameText;
@@ -31,7 +32,6 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         textQuantity = findViewById(R.id.quantity_text_view);
-        textSummary = findViewById(R.id.order_summary_text_view);
         checkWhip = findViewById(R.id.whip_check_box);
         checkChoc = findViewById(R.id.choc_check_box);
         nameText = findViewById(R.id.name_input);
@@ -76,7 +76,14 @@ public class MainActivity extends AppCompatActivity {
         String name = nameText.getText().toString();
         // Calls order summary method to create message
         String summaryMessage = createOrderSummary(calculatePrice(isWhipChecked, isChocChecked), isWhipChecked, isChocChecked, name);
-        displayMessage(summaryMessage);
+        // Creates and executes an intent to send the information from order summary by email
+        Intent intent = new Intent(Intent.ACTION_SENDTO);
+        intent.setData(Uri.parse("mailto:"));
+        intent.putExtra(Intent.EXTRA_SUBJECT, "Just Java Coffee Order for "+ name);
+        intent.putExtra(Intent.EXTRA_TEXT, summaryMessage);
+        if (intent.resolveActivity(getPackageManager()) != null) {
+            startActivity(intent);
+        }
     }
 
     /**
@@ -121,14 +128,6 @@ public class MainActivity extends AppCompatActivity {
         summaryMessage += "\nQuantity: " + quantity;
         summaryMessage += "\nTotal: $" + total + "\nThank You!";
         return summaryMessage;
-    }
-
-    /**
-     * This method displays the given text on the screen.
-     */
-    private void displayMessage(String message) {
-        TextView orderSummaryTextView = textSummary;
-        orderSummaryTextView.setText(message);
     }
 
 }
