@@ -68,7 +68,7 @@ public class MainActivity extends AppCompatActivity {
         boolean isChocChecked = checkChoc.isChecked();
         String name = nameText.getText().toString();
         // Calls order summary method to create message
-        String summaryMessage = createOrderSummary(calculatePrice(), isWhipChecked, isChocChecked, name);
+        String summaryMessage = createOrderSummary(calculatePrice(isWhipChecked, isChocChecked), isWhipChecked, isChocChecked, name);
         displayMessage(summaryMessage);
     }
 
@@ -83,10 +83,19 @@ public class MainActivity extends AppCompatActivity {
     /**
      * Calculates the price of the order.
      *
+     * @param hasWhippedCream boolean that checks if whipped cream is added.
+     * @param hasChocolate boolean that checks if chocolate is added.
      * @return total price.
      */
-    private int calculatePrice() {
-        return quantity * 5;
+    private int calculatePrice(boolean hasWhippedCream, boolean hasChocolate) {
+        int price = 5;
+        if (hasWhippedCream) {
+            price += 1;
+        }
+        if (hasChocolate) {
+            price += 2;
+        }
+        return quantity * price;
     }
 
     /**
