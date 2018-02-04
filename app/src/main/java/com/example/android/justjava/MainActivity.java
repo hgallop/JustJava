@@ -77,9 +77,11 @@ public class MainActivity extends AppCompatActivity {
         // Calls order summary method to create message
         String summaryMessage = createOrderSummary(calculatePrice(isWhipChecked, isChocChecked), isWhipChecked, isChocChecked, name);
         // Creates and executes an intent to send the information from order summary by email
+        String emailSubject = getResources().getString(R.string.order_summary_email_subject);
+        emailSubject += " " + name;
         Intent intent = new Intent(Intent.ACTION_SENDTO);
         intent.setData(Uri.parse("mailto:"));
-        intent.putExtra(Intent.EXTRA_SUBJECT, "Just Java Coffee Order for "+ name);
+        intent.putExtra(Intent.EXTRA_SUBJECT, emailSubject);
         intent.putExtra(Intent.EXTRA_TEXT, summaryMessage);
         if (intent.resolveActivity(getPackageManager()) != null) {
             startActivity(intent);
@@ -127,14 +129,14 @@ public class MainActivity extends AppCompatActivity {
         String name = getResources().getString(R.string.summ_name, typedName);
         String whip = getResources().getString(R.string.summ_whip, hasWhippedCream);
         String choc = getResources().getString(R.string.summ_choc, hasChocolate);
-        String quan = getResources().getString(R.string.summ_quan);
-        String tot = getResources().getString(R.string.summ_total);
+        String quan = getResources().getString(R.string.summ_quan, quantity);
+        String tot = getResources().getString(R.string.summ_total, total);
         String thanks = getResources().getString(R.string.summ_thanks);
         String summaryMessage = name;
         summaryMessage += "\n" + whip;
         summaryMessage += "\n" + choc;
-        summaryMessage += "\n" + quan + " " + quantity;
-        summaryMessage += "\n" + tot + total + "\n" + thanks;
+        summaryMessage += "\n" + quan;
+        summaryMessage += "\n" + tot + "\n" + thanks;
         return summaryMessage;
     }
 
