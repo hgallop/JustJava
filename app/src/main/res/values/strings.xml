@@ -27,8 +27,8 @@
     <string name="summ_choc">Add chocolate? <xliff:g id="hasChocolate" example="true">%b</xliff:g></string>
     <!-- Summary text for quantity. Shown in format "Quantity: 3" where three is the selected quantity [CHAR LIMIT=20] -->
     <string name="summ_quan">Quantity: <xliff:g id="quanInt" example="3">%d</xliff:g></string>
-    <!-- Summary text for total. Shown in format "Total: $15" where 15 is the calculated total[CHAR LIMIT=20] -->
-    <string name="summ_total">Total: $<xliff:g id="totInt" example="15">%d</xliff:g></string>
+    <!-- Summary text for total. Shown in format "Total: $15" where $15 is the calculated total[CHAR LIMIT=20] -->
+    <string name="summ_total">Total: <xliff:g id="totInt" example="$15">%s</xliff:g></string>
     <!-- Subject line for the order summary email. [CHAR LIMIT=NONE] -->
     <string name="order_summary_email_subject">Just Java Coffee Order for </string>
     <!-- Thank you message for the order summary. [CHAR LIMIT=NONE] -->

@@ -21,8 +21,8 @@
     <string name="summ_choc">Avec du chocolat ? <xliff:g example="true" id="addChocolate">%b</xliff:g></string>
     <!-- Quantity of cups for the order summary. It will be shown in the format of "Quantity: 3", where 3 is the number of cups ordered. [CHAR LIMIT=NONE]-->
     <string name="summ_quan">Quantité: <xliff:g example="2" id="quantity">%d</xliff:g></string>
-    <!-- Total price for order summary. Shown in the format of "Total: $15" where 15 is the price. [CHAR LIMIT=NONE] -->
-    <string name="summ_total">Total: $<xliff:g example="10" id="totInt">%d</xliff:g></string>
+    <!-- Total price for order summary. Shown in the format of "Total: $15" where $15 is the price. [CHAR LIMIT=NONE] -->
+    <string name="summ_total">Total: <xliff:g example="$10" id="totInt">%s</xliff:g></string>
     <!-- Thank you message for the order summary. [CHAR LIMIT=NONE] -->
     <string name="summ_thanks">Mille merci!</string>
     <!-- Subject line for the order summary email. [CHAR LIMIT=NONE] -->
