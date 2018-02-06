@@ -21,6 +21,7 @@ public class MainActivity extends AppCompatActivity {
      * This variable is the global quantity used in all onClick methods
      */
     int quantity = 0;
+    String name;
 
     private TextView textQuantity;
     private CheckBox checkWhip;
@@ -37,6 +38,22 @@ public class MainActivity extends AppCompatActivity {
         checkChoc = findViewById(R.id.choc_check_box);
         nameText = findViewById(R.id.name_input);
     }
+
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+        outState.putInt("quantity", quantity);
+        outState.putString("name", name);
+    }
+
+    @Override
+    protected void onRestoreInstanceState(Bundle savedInstanceState) {
+        super.onRestoreInstanceState(savedInstanceState);
+        quantity = savedInstanceState.getInt("quantity");
+        name = savedInstanceState.getString("name");
+        displayQuantity(quantity);
+    }
+
 
     /**
      * This method is called when the + button is clicked.
@@ -74,7 +91,7 @@ public class MainActivity extends AppCompatActivity {
         // Checks for user input
         boolean isWhipChecked = checkWhip.isChecked();
         boolean isChocChecked = checkChoc.isChecked();
-        String name = nameText.getText().toString();
+        name = nameText.getText().toString();
         // Calls order summary method to create message
         String summaryMessage = createOrderSummary(calculatePrice(isWhipChecked, isChocChecked), isWhipChecked, isChocChecked, name);
         // Creates and executes an intent to send the information from order summary by email
