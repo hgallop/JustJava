@@ -27,7 +27,7 @@
     <!-- Thank you message for the order summary. [CHAR LIMIT=NONE] -->
     <string name="summ_thanks">Gracias!</string>
     <!-- Text for accessibility of image [CHAR LIMIT=NONE] -->
-    <string name="image">Taza de café y granos de café</string>
+    <string name="image">Café humeante en una taza</string>
     <!-- Subject line for the order summary email.[CHAR LIMIT=NONE] -->
     <string name="order_summary_email_subject">Solo pedido de java coffee </string>
 </resources>

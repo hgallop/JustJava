@@ -2,7 +2,7 @@
     <!-- Text for name of app [CHAR LIMIT=20] -->
     <string name="app_name">Just Java</string>
     <!-- Text for accessibility of image [CHAR LIMIT=NONE] -->
-    <string name="image">Coffee cup and coffee beans</string>
+    <string name="image">Steaming coffee in a cup</string>
     <!-- Header text for quantity display [CHAR LIMIT=20] -->
     <string name="quan">Quantity</string>
     <string name="add" translatable="false">+</string>
