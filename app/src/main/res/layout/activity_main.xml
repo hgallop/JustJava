@@ -1,10 +1,9 @@
-<?xml version="1.0" encoding="utf-8"?><!-- Image borrowed from https://www.theodysseyonline.com/coffee-day-keeps-doctor-away -->
-
+<?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:background="@drawable/coffee_image"
+    android:background="@android:color/white"
     android:fillViewport="true"
     tools:context=".MainActivity">
 
@@ -50,6 +49,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_gravity="center"
             android:padding="@dimen/pad"
             android:paddingTop="@dimen/pad2"
             android:text="@string/quan"
@@ -59,14 +59,15 @@
 
         <LinearLayout
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_gravity="center">
 
             <Button
                 android:id="@+id/decrement_button"
                 android:layout_width="@dimen/but_size"
                 android:layout_height="@dimen/but_size"
                 android:layout_margin="@dimen/pad"
-                android:background="@color/buttonAlmond"
+                android:background="@drawable/button_capsule"
                 android:onClick="decrement"
                 android:text="@string/sub"
                 android:textSize="@dimen/text" />
@@ -85,7 +86,7 @@
                 android:layout_width="@dimen/but_size"
                 android:layout_height="@dimen/but_size"
                 android:layout_margin="@dimen/pad"
-                android:background="@color/buttonAlmond"
+                android:background="@drawable/button_capsule"
                 android:onClick="increment"
                 android:text="@string/add"
                 android:textSize="@dimen/text" />
@@ -96,12 +97,19 @@
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_gravity="center"
             android:layout_marginTop="@dimen/pad2"
             android:layout_margin="@dimen/pad"
-            android:background="@color/buttonAlmond"
+            android:background="@drawable/button_capsule"
             android:onClick="submitOrder"
             android:text="@string/order" />
 
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:scaleType="centerInside"
+            android:src="@drawable/justjavaimg"/>
 
     </LinearLayout>
 </ScrollView>

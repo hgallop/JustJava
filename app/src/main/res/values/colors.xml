@@ -4,6 +4,6 @@
     <color name="colorPrimaryDark">#4E2E28</color>
     <color name="colorAccent">#C48E48</color>
     <color name="black">#000000</color>
-    <color name="chocolate">#4E2E28</color>
-    <color name="buttonAlmond">#C48E48</color>
+    <color name="chocolate">#2b1d0e</color>
+    <color name="buttonAlmond">#795548</color>
 </resources>
