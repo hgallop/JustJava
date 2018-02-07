@@ -30,4 +30,6 @@
     <string name="image">Café humeante en una taza</string>
     <!-- Subject line for the order summary email.[CHAR LIMIT=NONE] -->
     <string name="order_summary_email_subject">Solo pedido de java coffee </string>
+    <string name="toastUpper">No puedes pedir más de 100 tazas de café</string>
+    <string name="toastLower">No puedes pedir menos de 1 taza de café</string>
 </resources>

@@ -30,4 +30,6 @@
     <string name="topping">Les extras</string>
     <string name="input">Ton petit nom</string>
     <string name="image">Café à la vapeur dans une tasse</string>
+    <string name="toastUpper">Vous ne pouvez pas commander plus de 100 tasses de café</string>
+    <string name="toastLower">Vous ne pouvez pas commander moins de 1 tasse de café</string>
 </resources>

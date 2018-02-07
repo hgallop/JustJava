@@ -57,7 +57,7 @@ public class MainActivity extends AppCompatActivity {
      */
     public void increment(View view) {
         if (quantity >= 100) {
-            Toast.makeText(this, "You cannot order more than 100 cups of coffee", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, this.getString(R.string.toastLower), Toast.LENGTH_SHORT).show();
             return;
         } else {
             quantity += 1;
@@ -72,7 +72,7 @@ public class MainActivity extends AppCompatActivity {
         if (quantity <= 0) {
             quantity = 0;
             displayQuantity(quantity);
-            Toast.makeText(this, "You cannot order less than 1 cup of coffee", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, this.getString(R.string.toastUpper), Toast.LENGTH_SHORT).show();
             return;
         } else {
             quantity -= 1;
