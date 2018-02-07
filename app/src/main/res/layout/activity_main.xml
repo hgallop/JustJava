@@ -22,40 +22,28 @@
             android:textColor="@color/chocolate" />
 
         <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:padding="@dimen/pad"
+            style="@style/TextStyle"
             android:text="@string/topping"
             android:textAllCaps="true"
-            android:textColor="@color/chocolate"
-            android:textSize="@dimen/text" />
+            android:textColor="@color/chocolate" />
 
         <CheckBox
             android:id="@+id/whip_check_box"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:paddingLeft="@dimen/check"
-            android:paddingStart="@dimen/check"
+            style="@style/CheckboxStyle"
             android:text="@string/whip_top" />
 
         <CheckBox
             android:id="@+id/choc_check_box"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:paddingLeft="@dimen/check"
-            android:paddingStart="@dimen/check"
+            style="@style/CheckboxStyle"
             android:text="@string/choc_top" />
 
         <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            style="@style/TextStyle"
             android:layout_gravity="center"
-            android:padding="@dimen/pad"
             android:paddingTop="@dimen/pad2"
             android:text="@string/quan"
             android:textAllCaps="true"
-            android:textColor="@color/chocolate"
-            android:textSize="@dimen/text" />
+            android:textColor="@color/chocolate" />
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -64,33 +52,23 @@
 
             <Button
                 android:id="@+id/decrement_button"
-                android:layout_width="@dimen/but_size"
-                android:layout_height="@dimen/but_size"
-                android:layout_margin="@dimen/pad"
-                android:background="@drawable/button_capsule"
+                style="@style/ButtonStyle"
                 android:onClick="decrement"
-                android:text="@string/sub"
-                android:textSize="@dimen/text" />
+                android:text="@string/sub" />
 
             <TextView
                 android:id="@+id/quantity_text_view"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                style="@style/TextStyle"
                 android:freezesText="true"
                 android:layout_marginTop="@dimen/pad"
                 android:text="@string/quan_display"
-                android:textColor="@color/black"
-                android:textSize="@dimen/text" />
+                android:textColor="@color/black" />
 
             <Button
                 android:id="@+id/increment_button"
-                android:layout_width="@dimen/but_size"
-                android:layout_height="@dimen/but_size"
-                android:layout_margin="@dimen/pad"
-                android:background="@drawable/button_capsule"
+                style="@style/ButtonStyle"
                 android:onClick="increment"
-                android:text="@string/add"
-                android:textSize="@dimen/text" />
+                android:text="@string/add" />
 
         </LinearLayout>
 
