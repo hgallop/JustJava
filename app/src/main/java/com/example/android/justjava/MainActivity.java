@@ -1,6 +1,5 @@
 package com.example.android.justjava;
 
-
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
@@ -17,9 +16,9 @@ import java.text.NumberFormat;
  */
 public class MainActivity extends AppCompatActivity {
 
-    /**
-     * This variable is the global quantity used in all onClick methods
-     */
+    public final String QUANTITY = "quantity";
+    public final String NAME = "name";
+
     int quantity = 0;
     String name;
 
@@ -42,18 +41,16 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onSaveInstanceState(Bundle outState) {
         super.onSaveInstanceState(outState);
-        outState.putInt("quantity", quantity);
-        outState.putString("name", name);
+        outState.putInt(QUANTITY, quantity);
+        outState.putString(NAME, name);
     }
 
     @Override
     protected void onRestoreInstanceState(Bundle savedInstanceState) {
         super.onRestoreInstanceState(savedInstanceState);
-        quantity = savedInstanceState.getInt("quantity");
-        name = savedInstanceState.getString("name");
-        displayQuantity(quantity);
+        quantity = savedInstanceState.getInt(QUANTITY);
+        name = savedInstanceState.getString(NAME);
     }
-
 
     /**
      * This method is called when the + button is clicked.
@@ -110,10 +107,9 @@ public class MainActivity extends AppCompatActivity {
      * This method displays the given quantity value on the screen.
      */
     private void displayQuantity(int numberOfCoffees) {
-        TextView quantityTextView = textQuantity;
         String empty = getResources().getString(R.string.none);
         empty += numberOfCoffees;
-        quantityTextView.setText(empty);
+        textQuantity.setText(empty);
     }
 
     /**

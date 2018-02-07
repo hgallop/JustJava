@@ -76,6 +76,7 @@
                 android:id="@+id/quantity_text_view"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:freezesText="true"
                 android:layout_marginTop="@dimen/pad"
                 android:text="@string/quan_display"
                 android:textColor="@color/black"
