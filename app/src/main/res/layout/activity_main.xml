@@ -91,5 +91,13 @@
             android:scaleType="centerInside"
             android:src="@drawable/justjavaimg"/>
 
+        <TextView
+            android:id="@+id/displayMessage"
+            style="@style/TextStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/colorPrimaryDark"
+            android:gravity="center"
+            />
     </LinearLayout>
 </ScrollView>

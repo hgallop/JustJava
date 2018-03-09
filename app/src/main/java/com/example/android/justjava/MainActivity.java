@@ -11,6 +11,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import java.text.NumberFormat;
+
 /**
  * This app displays an order form to order coffee.
  */
@@ -26,6 +27,7 @@ public class MainActivity extends AppCompatActivity {
     private CheckBox checkWhip;
     private CheckBox checkChoc;
     private EditText nameText;
+    private TextView message;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,6 +38,7 @@ public class MainActivity extends AppCompatActivity {
         checkWhip = findViewById(R.id.whip_check_box);
         checkChoc = findViewById(R.id.choc_check_box);
         nameText = findViewById(R.id.name_input);
+        message = findViewById(R.id.displayMessage);
     }
 
     @Override
@@ -91,6 +94,7 @@ public class MainActivity extends AppCompatActivity {
         name = nameText.getText().toString();
         // Calls order summary method to create message
         String summaryMessage = createOrderSummary(calculatePrice(isWhipChecked, isChocChecked), isWhipChecked, isChocChecked, name);
+        displayMessage(summaryMessage);
         // Creates and executes an intent to send the information from order summary by email
         String emailSubject = getResources().getString(R.string.order_summary_email_subject);
         emailSubject += " " + name;
@@ -105,11 +109,18 @@ public class MainActivity extends AppCompatActivity {
 
     /**
      * This method displays the given quantity value on the screen.
+     * @param numberOfCoffees int value of quantity
      */
     private void displayQuantity(int numberOfCoffees) {
-        String empty = getResources().getString(R.string.none);
-        empty += numberOfCoffees;
-        textQuantity.setText(empty);
+        textQuantity.setText(String.valueOf(numberOfCoffees));
+    }
+
+    /**
+     * This method displays the orderSummary message on the screen.
+     * @param order a String summaryMessage of the whole coffee order
+     */
+    private void displayMessage(String order){
+        message.setText(order);
     }
 
     /**
@@ -117,7 +128,7 @@ public class MainActivity extends AppCompatActivity {
      *
      * @param hasWhippedCream boolean that checks if whipped cream is added.
      * @param hasChocolate boolean that checks if chocolate is added.
-     * @return total price.
+     * @return quantity * price.
      */
     private int calculatePrice(boolean hasWhippedCream, boolean hasChocolate) {
         int price = 5;

@@ -18,7 +18,6 @@
     <string name="choc_top">Chocolate</string>
     <!-- EditText hint text for adding name [CHAR LIMIT=20] -->
     <string name="input">Name</string>
-    <string name="none" translatable="false"> </string>
     <!-- Summary text for name in order summary. Shown in format "Name: Lin" where Lin is the users name from input [CHAR LIMIT=20] -->
     <string name="summ_name">Name: <xliff:g id="name_input" example="Lin">%s</xliff:g></string>
     <!-- Whipped cream topping for the order summary. Shown in format of "Add whipped cream? true" or "Add whipped cream? false". [CHAR LIMIT=NONE] -->
