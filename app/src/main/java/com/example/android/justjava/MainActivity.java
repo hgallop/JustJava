@@ -60,12 +60,13 @@ public class MainActivity extends AppCompatActivity {
      */
     public void increment(View view) {
         if (quantity >= 100) {
-            Toast.makeText(this, this.getString(R.string.toastLower), Toast.LENGTH_SHORT).show();
+            Toast.makeText(this,this.getString(R.string.toastUpper), Toast.LENGTH_SHORT).show();
             return;
         } else {
             quantity += 1;
         }
         displayQuantity(quantity);
+        displayMessage(getResources().getString(R.string.summ_total, NumberFormat.getCurrencyInstance().format(calculatePrice(checkWhip.isChecked(), checkChoc.isChecked()))));
     }
 
     /**
@@ -75,12 +76,13 @@ public class MainActivity extends AppCompatActivity {
         if (quantity <= 0) {
             quantity = 0;
             displayQuantity(quantity);
-            Toast.makeText(this, this.getString(R.string.toastUpper), Toast.LENGTH_SHORT).show();
+            Toast.makeText(this,this.getString(R.string.toastLower), Toast.LENGTH_SHORT).show();
             return;
         } else {
             quantity -= 1;
         }
         displayQuantity(quantity);
+        displayMessage(getResources().getString(R.string.summ_total, NumberFormat.getCurrencyInstance().format(calculatePrice(checkWhip.isChecked(), checkChoc.isChecked()))));
     }
 
     /**
@@ -94,7 +96,8 @@ public class MainActivity extends AppCompatActivity {
         name = nameText.getText().toString();
         // Calls order summary method to create message
         String summaryMessage = createOrderSummary(calculatePrice(isWhipChecked, isChocChecked), isWhipChecked, isChocChecked, name);
-        displayMessage(summaryMessage);
+        String orderPlaced = getResources().getString(R.string.summOrderPlaced);
+        displayMessage(summaryMessage + orderPlaced);
         // Creates and executes an intent to send the information from order summary by email
         String emailSubject = getResources().getString(R.string.order_summary_email_subject);
         emailSubject += " " + name;

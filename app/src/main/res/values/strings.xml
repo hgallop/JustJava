@@ -32,6 +32,7 @@
     <string name="order_summary_email_subject">Just Java Coffee Order for </string>
     <!-- Thank you message for the order summary. [CHAR LIMIT=NONE] -->
     <string name="summ_thanks">Thank You!</string>
+    <string name="summOrderPlaced">" Your order has been created!"</string>
     <string name="toastUpper">You cannot order more than 100 cups of coffee</string>
     <string name="toastLower">You cannot order less than 1 cup of coffee</string>
 </resources>
